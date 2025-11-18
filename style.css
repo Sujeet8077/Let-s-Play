@@ -1,0 +1,164 @@
+:root {
+    --primary-color: #4CAF50; /* Green */
+    --secondary-color: #2c3e50; /* Dark Blue */
+    --background-color: #f4f4f9; /* Light Gray */
+    --text-color: #333;
+    --button-hover: #45a049;
+    --win-color: #e74c3c; /* Red */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin: 0 0 10px 0;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--button-hover);
+}
+
+main {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align content to the top */
+}
+
+#gameContainer {
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+#welcomeScreen {
+    padding: 40px;
+    border: 2px dashed var(--primary-color);
+    border-radius: 10px;
+}
+
+/* --- Tic-Tac-Toe Specific Styles --- */
+.tictactoe-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin: 20px auto;
+    width: 310px; /* 3*100 + 2*5 */
+}
+
+.tictactoe-cell {
+    background-color: #ecf0f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid #bdc3c7;
+    transition: background-color 0.15s;
+}
+
+.tictactoe-cell:hover:not(.occupied) {
+    background-color: #dfe1e5;
+}
+
+.tictactoe-status {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+.tictactoe-status.win {
+    color: var(--win-color);
+}
+
+
+/* --- RPS Specific Styles --- */
+.rps-options button {
+    font-size: 1.5em;
+    padding: 15px 25px;
+    margin: 10px;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rps-results {
+    margin-top: 20px;
+    font-size: 1.1em;
+    text-align: left;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.rps-results p {
+    margin: 5px 0;
+}
+
+.rps-result-text {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+.rps-result-text.lose {
+    color: var(--win-color);
+}
+.rps-result-text.draw {
+    color: #f39c12; /* Orange */
+}
+
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px 0;
+    margin-top: auto;
+}
+
+.watermark {
+    font-size: 0.9em;
+    opacity: 0.7;
+    margin: 0;
+    padding: 5px 0;
+}
